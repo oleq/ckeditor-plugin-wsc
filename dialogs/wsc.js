@@ -10,7 +10,7 @@ CKEDITOR.dialog.add( 'checkspell', function( editor ) {
 		errorBoxId = 'cke_error_' + number,
 		interval,
 		protocol = document.location.protocol || 'http:',
-		errorMsg = editor.lang.wsc.notAvailable;
+		errorMsg = editor.lang.wsc_external.notAvailable;
 
 	var pasteArea =
 		'<textarea' +
@@ -37,7 +37,7 @@ CKEDITOR.dialog.add( 'checkspell', function( editor ) {
 
 	if ( editor.config.wsc_customLoaderScript ) {
 		errorMsg += '<p style="color:#000;font-size:11px;font-weight: normal;text-align:center;padding-top:10px">' +
-			editor.lang.wsc.errorLoading.replace( /%s/g, editor.config.wsc_customLoaderScript ) + '</p>';
+			editor.lang.wsc_external.errorLoading.replace( /%s/g, editor.config.wsc_customLoaderScript ) + '</p>';
 	}
 
 	function burnSpelling( dialog, errorMsg ) {
@@ -59,20 +59,20 @@ CKEDITOR.dialog.add( 'checkspell', function( editor ) {
 			CKEDITOR.document.getById( iframeId ).setStyle( 'display', 'none' );
 			var errorBox = CKEDITOR.document.getById( errorBoxId );
 			errorBox.setStyle( 'display', 'block' );
-			errorBox.setHtml( m || editor.lang.wsc.notAvailable );
+			errorBox.setHtml( m || editor.lang.wsc_external.notAvailable );
 		}
 	};
 
 	function initAndSpell( dialog ) {
 		var LangComparer = new window._SP_FCK_LangCompare(),
 			// Language abbr standarts comparer.
-			pluginPath = CKEDITOR.getUrl( editor.plugins.wsc.path + 'dialogs/' ),
+			pluginPath = CKEDITOR.getUrl( editor.plugins.wsc_external.path + 'dialogs/' ),
 			// Service paths corecting/preparing.
 			framesetPath = pluginPath + 'tmpFrameset.html';
 
 		// global var is used in FCK specific core
 		// change on equal var used in fckplugin.js
-		window.gFCKPluginName = 'wsc';
+		window.gFCKPluginName = 'wsc_external';
 
 		LangComparer.setDefaulLangCode( editor.config.defaultLanguage );
 
@@ -113,7 +113,7 @@ CKEDITOR.dialog.add( 'checkspell', function( editor ) {
 	}
 
 	return {
-		title: editor.config.wsc_dialogTitle || editor.lang.wsc.title,
+		title: editor.config.wsc_dialogTitle || editor.lang.wsc_external.title,
 		minWidth: 485,
 		minHeight: 380,
 		buttons: [ CKEDITOR.dialog.cancelButton ],
@@ -146,7 +146,7 @@ CKEDITOR.dialog.add( 'checkspell', function( editor ) {
 		contents: [
 			{
 			id: 'general',
-			label: editor.config.wsc_dialogTitle || editor.lang.wsc.title,
+			label: editor.config.wsc_dialogTitle || editor.lang.wsc_external.title,
 			padding: 0,
 			elements: [
 				{

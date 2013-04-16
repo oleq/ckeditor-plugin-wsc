@@ -2,7 +2,7 @@
 Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
-CKEDITOR.plugins.setLang( 'wsc', 'fr-ca', {
+CKEDITOR.plugins.setLang( 'wsc_external', 'fr-ca', {
 	btnIgnore: 'Ignorer',
 	btnIgnoreAll: 'Ignorer tout',
 	btnReplace: 'Remplacer',

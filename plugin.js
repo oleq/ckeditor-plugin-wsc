@@ -8,7 +8,7 @@
  */
 
 // Register a plugin named "wsc".
-CKEDITOR.plugins.add( 'wsc', {
+CKEDITOR.plugins.add( 'wsc_external', {
 	requires: 'dialog',
 	lang: 'af,ar,bg,bn,bs,ca,cs,cy,da,de,el,en-au,en-ca,en-gb,en,eo,es,et,eu,fa,fi,fo,fr-ca,fr,gl,gu,he,hi,hr,hu,is,it,ja,ka,km,ko,lt,lv,mk,mn,ms,nb,nl,no,pl,pt-br,pt,ro,ru,sk,sl,sr-latn,sr,sv,th,tr,ug,uk,vi,zh-cn,zh', // %REMOVE_LINE_CORE%
 	icons: 'spellchecker', // %REMOVE_LINE_CORE%
@@ -20,9 +20,9 @@ CKEDITOR.plugins.add( 'wsc', {
 		// SpellChecker doesn't work in Opera and with custom domain
 		command.modes = { wysiwyg: ( !CKEDITOR.env.opera && !CKEDITOR.env.air && document.domain == window.location.hostname ) };
 
-		if(typeof editor.plugins.scayt == 'undefined'){
+		if(typeof editor.plugins.scayt_external == 'undefined'){
 			editor.ui.addButton && editor.ui.addButton( 'SpellChecker', {
-				label: editor.lang.wsc.toolbar,
+				label: editor.lang.wsc_external.toolbar,
 				command: commandName,
 				toolbar: 'spellchecker,10'
 			});
