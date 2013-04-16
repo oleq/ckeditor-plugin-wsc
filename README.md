@@ -9,9 +9,12 @@ Installation
 ------------
 
 1. Clone/copy this repository contents in a new "plugins/wsc" folder in your CKEditor installation.
-2. Enable the "wsc" plugin in the CKEditor configuration file (config.js):
+2. Load external wsc plugin:
 
-        config.extraPlugins = 'wsc';
+         CKEDITOR.plugins.addExternal('wsc_external', baseUrl + 'wsc_external/', 'plugin.js') ;
+3. Add plugin to CKEDITOR.config.extraPlugins:
+
+		CKEDITOR.config.extraPlugins = "wsc_external";
 
 That's all. WSC will appear on the editor toolbar and will be ready to use.
 
